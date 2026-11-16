@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>贪吃蛇</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1>贪吃蛇</h1>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">得分</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">最高分</span>
+          <span class="stat-value" id="best">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">等级</span>
+          <span class="stat-value" id="level">1</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="stage">
+      <canvas id="board" width="600" height="600" aria-label="贪吃蛇游戏区域"></canvas>
+
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <p class="panel-kicker" id="panelKicker">准备开始</p>
+          <h2 class="panel-title" id="panelTitle">贪吃蛇</h2>
+          <p class="panel-desc" id="panelDesc">方向键或 WASD 控制方向，吃到果实得 10 分。</p>
+          <button class="btn-primary" id="primaryBtn" type="button">开始游戏</button>
+          <p class="panel-hint">空格暂停 · R 重新开始</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="controls">
+      <button class="btn-ghost" id="pauseBtn" type="button" disabled>暂停</button>
+      <div class="dpad" aria-hidden="true">
+        <button class="dpad-btn up" data-dir="up" type="button" aria-label="向上">↑</button>
+        <button class="dpad-btn left" data-dir="left" type="button" aria-label="向左">←</button>
+        <button class="dpad-btn down" data-dir="down" type="button" aria-label="向下">↓</button>
+        <button class="dpad-btn right" data-dir="right" type="button" aria-label="向右">→</button>
+      </div>
+      <button class="btn-ghost" id="restartBtn" type="button">重新开始</button>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
